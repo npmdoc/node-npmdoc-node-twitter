@@ -1,0 +1,4035 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/istrategylabs/node-twitter"
+
+    >node-twitter (v0.5.3)</a>
+</h1>
+<h4>A node.js module for interacting with the Twitter API.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-twitter">module node-twitter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient">
+            function <span class="apidocSignatureSpan">node-twitter.</span>RestClient
+            <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.super_">
+            function <span class="apidocSignatureSpan">node-twitter.</span>RestClient.super_
+            <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator">
+            function <span class="apidocSignatureSpan">node-twitter.</span>RestParameterValidator
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.SearchClient">
+            function <span class="apidocSignatureSpan">node-twitter.</span>SearchClient
+            <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.StreamClient">
+            function <span class="apidocSignatureSpan">node-twitter.</span>StreamClient
+            <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.UploadClient">
+            function <span class="apidocSignatureSpan">node-twitter.</span>UploadClient
+            <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-twitter.</span>RestClient.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-twitter.</span>RestClient.super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-twitter.</span>RestParameterValidator.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-twitter.</span>SearchClient.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-twitter.</span>StreamClient.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-twitter.</span>UploadClient.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-twitter.RestClient">module node-twitter.RestClient</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.RestClient">
+            function <span class="apidocSignatureSpan">node-twitter.</span>RestClient
+            <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.super_">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.</span>super_
+            <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-twitter.RestClient.prototype">module node-twitter.RestClient.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.applicationRateLimitStatus">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>applicationRateLimitStatus
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.directMessages">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>directMessages
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.directMessagesDestroy">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>directMessagesDestroy
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.directMessagesNew">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>directMessagesNew
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.directMessagesSent">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>directMessagesSent
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.followersIds">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>followersIds
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.friendsIds">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>friendsIds
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.friendsList">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>friendsList
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesDestroy">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesDestroy
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesHomeTimeline">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesHomeTimeline
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesMentions">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesMentions
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesOEmbed">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesOEmbed
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesPublicTimeline">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesPublicTimeline
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweet">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweet
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedBy">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweetedBy
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedByIds">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweetedByIds
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedByMe">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweetedByMe
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedByUser">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweetedByUser
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedToMe">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweetedToMe
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedToUser">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweetedToUser
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweets">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweets
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweetsOfMe">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweetsOfMe
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesShow">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesShow
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesUpdate">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesUpdate
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesUpdateWithMedia">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesUpdateWithMedia
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.statusesUserTimeline">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesUserTimeline
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.userFavorites">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>userFavorites
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.prototype.usersLookup">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>usersLookup
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-twitter.RestClient.super_">module node-twitter.RestClient.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.super_.super_">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-twitter.RestClient.super_.prototype">module node-twitter.RestClient.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.super_.prototype._connectionForKey">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_connectionForKey
+            <span class="apidocSignatureSpan">(aKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.super_.prototype._createEventListenersForRequest">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_createEventListenersForRequest
+            <span class="apidocSignatureSpan">(aRequest)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.super_.prototype._createGetRequest">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_createGetRequest
+            <span class="apidocSignatureSpan">(resource, format, parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.super_.prototype._createPostRequest">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_createPostRequest
+            <span class="apidocSignatureSpan">(resource, format, parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.super_.prototype._removeConnectionForKey">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_removeConnectionForKey
+            <span class="apidocSignatureSpan">(aKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.super_.prototype._requestDidClose">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_requestDidClose
+            <span class="apidocSignatureSpan">(aRequest)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.super_.prototype._requestDidEnd">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_requestDidEnd
+            <span class="apidocSignatureSpan">(aRequest)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.super_.prototype._requestDidFailWithError">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_requestDidFailWithError
+            <span class="apidocSignatureSpan">(aRequest, aError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.super_.prototype._requestDidReceiveData">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_requestDidReceiveData
+            <span class="apidocSignatureSpan">(aRequest, aData)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.super_.prototype._requestDidReceiveResponse">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_requestDidReceiveResponse
+            <span class="apidocSignatureSpan">(aRequest, aResponse)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestClient.super_.prototype.oauth">
+            function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>oauth
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-twitter.RestParameterValidator">module node-twitter.RestParameterValidator</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.RestParameterValidator">
+            function <span class="apidocSignatureSpan">node-twitter.</span>RestParameterValidator
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.super_">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-twitter.RestParameterValidator.prototype">module node-twitter.RestParameterValidator.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateAlign">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateAlign
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateContributorDetails">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateContributorDetails
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateCount">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateCount
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateDisplayCoordinates">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateDisplayCoordinates
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateExcludeReplies">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateExcludeReplies
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateHideMedia">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateHideMedia
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateHideThread">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateHideThread
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateId">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateId
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateInReplyToStatusId">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateInReplyToStatusId
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateIncludeEntities">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateIncludeEntities
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateIncludeRetweets">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateIncludeRetweets
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateLanguage">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateLanguage
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateLatitude">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateLatitude
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateLongitude">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateLongitude
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateMaxId">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateMaxId
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateMaxWidth">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateMaxWidth
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateMedia">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateMedia
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateOmitScript">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateOmitScript
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validatePage">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validatePage
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validatePlaceId">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validatePlaceId
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validatePossiblySensitive">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validatePossiblySensitive
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateRelated">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateRelated
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateScreenName">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateScreenName
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateSinceId">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateSinceId
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateSkipStatus">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateSkipStatus
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateStatus">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateStatus
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateStringifyIds">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateStringifyIds
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateText">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateText
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateTrimUser">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateTrimUser
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateUrl">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateUrl
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateUserId">
+            function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateUserId
+            <span class="apidocSignatureSpan">(parameters)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-twitter.SearchClient">module node-twitter.SearchClient</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.SearchClient.SearchClient">
+            function <span class="apidocSignatureSpan">node-twitter.</span>SearchClient
+            <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.SearchClient.super_">
+            function <span class="apidocSignatureSpan">node-twitter.SearchClient.</span>super_
+            <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-twitter.SearchClient.prototype">module node-twitter.SearchClient.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.SearchClient.prototype.search">
+            function <span class="apidocSignatureSpan">node-twitter.SearchClient.prototype.</span>search
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-twitter.StreamClient">module node-twitter.StreamClient</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.StreamClient.StreamClient">
+            function <span class="apidocSignatureSpan">node-twitter.</span>StreamClient
+            <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.StreamClient.super_">
+            function <span class="apidocSignatureSpan">node-twitter.StreamClient.</span>super_
+            <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-twitter.StreamClient.prototype">module node-twitter.StreamClient.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.StreamClient.prototype._requestDidClose">
+            function <span class="apidocSignatureSpan">node-twitter.StreamClient.prototype.</span>_requestDidClose
+            <span class="apidocSignatureSpan">(aRequest)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.StreamClient.prototype._requestDidEnd">
+            function <span class="apidocSignatureSpan">node-twitter.StreamClient.prototype.</span>_requestDidEnd
+            <span class="apidocSignatureSpan">(aRequest)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.StreamClient.prototype._requestDidFailWithError">
+            function <span class="apidocSignatureSpan">node-twitter.StreamClient.prototype.</span>_requestDidFailWithError
+            <span class="apidocSignatureSpan">(aRequest, aError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.StreamClient.prototype._requestDidReceiveData">
+            function <span class="apidocSignatureSpan">node-twitter.StreamClient.prototype.</span>_requestDidReceiveData
+            <span class="apidocSignatureSpan">(aRequest, aData)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.StreamClient.prototype.isRunning">
+            function <span class="apidocSignatureSpan">node-twitter.StreamClient.prototype.</span>isRunning
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.StreamClient.prototype.start">
+            function <span class="apidocSignatureSpan">node-twitter.StreamClient.prototype.</span>start
+            <span class="apidocSignatureSpan">(keywords, locations, users, count, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.StreamClient.prototype.stop">
+            function <span class="apidocSignatureSpan">node-twitter.StreamClient.prototype.</span>stop
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-twitter.UploadClient">module node-twitter.UploadClient</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.UploadClient.UploadClient">
+            function <span class="apidocSignatureSpan">node-twitter.</span>UploadClient
+            <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.UploadClient.super_">
+            function <span class="apidocSignatureSpan">node-twitter.UploadClient.</span>super_
+            <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-twitter.UploadClient.prototype">module node-twitter.UploadClient.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.UploadClient.prototype._createPostRequest">
+            function <span class="apidocSignatureSpan">node-twitter.UploadClient.prototype.</span>_createPostRequest
+            <span class="apidocSignatureSpan">(resource, format, parameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.UploadClient.prototype._mimeTypeForPathExtension">
+            function <span class="apidocSignatureSpan">node-twitter.UploadClient.prototype.</span>_mimeTypeForPathExtension
+            <span class="apidocSignatureSpan">(pathExtension)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-twitter.UploadClient.prototype.statusesUpdateWithMedia">
+            function <span class="apidocSignatureSpan">node-twitter.UploadClient.prototype.</span>statusesUpdateWithMedia
+            <span class="apidocSignatureSpan">(parameters, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-twitter" id="apidoc.module.node-twitter">module node-twitter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient" id="apidoc.element.node-twitter.RestClient">
+        function <span class="apidocSignatureSpan">node-twitter.</span>RestClient
+        <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RestClient = function (consumerKey, consumerSecret, token, tokenSecret)
+{
+    Client.call(this, consumerKey, consumerSecret, token, tokenSecret);
+
+    this._apiBaseUrlString = Constants.RestApiBaseURLString;
+    this._apiVersion = Constants.RestApiVersion;
+    this._format = &#x27;json&#x27;;
+    this._validator = new RestParameterValidator();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## REST
+
+The Twitter REST API can be accessed using Twitter.RestClient. The following code example shows how to retrieve tweets from the
+authenticated user&#x27;s timeline.
+
+```javascript
+var Twitter = require(&#x27;node-twitter&#x27;);
+
+var twitterRestClient = new Twitter.<span class="apidocCodeKeywordSpan">RestClient</span>(
+    &#x27;CONSUMER_KEY&#x27;,
+    &#x27;CONSUMER_SECRET&#x27;,
+    &#x27;TOKEN&#x27;,
+    &#x27;TOKEN_SECRET&#x27;
+);
+
+twitterRestClient.statusesHomeTimeline({}, function(error, result) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.super_" id="apidoc.element.node-twitter.RestClient.super_">
+        function <span class="apidocSignatureSpan">node-twitter.</span>RestClient.super_
+        <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RestClient.super_ = function (consumerKey, consumerSecret, token, tokenSecret)
+{
+    Events.EventEmitter.call(this);
+
+<span class="apidocCodeCommentSpan">    /** @private */
+</span>    this._apiBaseUrlString = null;
+    /** @private */
+    this._apiVersion = null;
+    /** @private */
+    this._oauth = {
+        consumer_key: consumerKey,
+        consumer_secret: consumerSecret,
+        token: token,
+        token_secret: tokenSecret
+    };
+    /** @private */
+    this._connections = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator" id="apidoc.element.node-twitter.RestParameterValidator">
+        function <span class="apidocSignatureSpan">node-twitter.</span>RestParameterValidator
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RestParameterValidator = function ()
+{
+    Object.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.SearchClient" id="apidoc.element.node-twitter.SearchClient">
+        function <span class="apidocSignatureSpan">node-twitter.</span>SearchClient
+        <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SearchClient = function (consumerKey, consumerSecret, token, tokenSecret)
+{
+    Client.call(this, consumerKey, consumerSecret, token, tokenSecret);
+
+    this._apiBaseUrlString = Constants.RestApiBaseURLString;
+    this._apiVersion = Constants.RestApiVersion;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Search
+
+The Twitter Search API can be accessed using Twitter.SearchClient. The following code example shows how to search for tweets containing
+ the keyword &#x22;node.js&#x22;.
+
+```javascript
+var Twitter = require(&#x27;node-twitter&#x27;);
+
+var twitterSearchClient = new Twitter.<span class="apidocCodeKeywordSpan">SearchClient</span>(
+    &#x27;CONSUMER_KEY&#x27;,
+    &#x27;CONSUMER_SECRET&#x27;,
+    &#x27;TOKEN&#x27;,
+    &#x27;TOKEN_SECRET&#x27;
+);
+
+twitterSearchClient.search({&#x27;q&#x27;: &#x27;node.js&#x27;}, function(error, result) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.StreamClient" id="apidoc.element.node-twitter.StreamClient">
+        function <span class="apidocSignatureSpan">node-twitter.</span>StreamClient
+        <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">StreamClient = function (consumerKey, consumerSecret, token, tokenSecret)
+{
+    Client.call(this, consumerKey, consumerSecret, token, tokenSecret);
+
+    this._apiBaseUrlString = Constants.StreamApiBaseURLString;
+    this._apiVersion = Constants.StreamApiVersion;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Streaming
+
+The Twitter Streaming API can be accessed using Twitter.StreamClient. The following code example shows how to catch all tweets containing
+ the keywords &#x22;baseball&#x22;, &#x22;basketball&#x22;, &#x22;football&#x22; or &#x22;hockey&#x22;.
+
+```javascript
+var Twitter = require(&#x27;node-twitter&#x27;);
+
+var twitterStreamClient = new Twitter.<span class="apidocCodeKeywordSpan">StreamClient</span>(
+    &#x27;CONSUMER_KEY&#x27;,
+    &#x27;CONSUMER_SECRET&#x27;,
+    &#x27;TOKEN&#x27;,
+    &#x27;TOKEN_SECRET&#x27;
+);
+
+twitterStreamClient.on(&#x27;close&#x27;, function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.UploadClient" id="apidoc.element.node-twitter.UploadClient">
+        function <span class="apidocSignatureSpan">node-twitter.</span>UploadClient
+        <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">UploadClient = function (consumerKey, consumerSecret, token, tokenSecret)
+{
+    Client.call(this, consumerKey, consumerSecret, token, tokenSecret);
+
+    this._apiBaseUrlString = Constants.UploadApiBaseURLString;
+    this._apiVersion = Constants.UploadApiVersion;
+    this._validator = new RestParameterValidator();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-twitter.RestClient" id="apidoc.module.node-twitter.RestClient">module node-twitter.RestClient</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.RestClient" id="apidoc.element.node-twitter.RestClient.RestClient">
+        function <span class="apidocSignatureSpan">node-twitter.</span>RestClient
+        <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RestClient = function (consumerKey, consumerSecret, token, tokenSecret)
+{
+    Client.call(this, consumerKey, consumerSecret, token, tokenSecret);
+
+    this._apiBaseUrlString = Constants.RestApiBaseURLString;
+    this._apiVersion = Constants.RestApiVersion;
+    this._format = &#x27;json&#x27;;
+    this._validator = new RestParameterValidator();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## REST
+
+The Twitter REST API can be accessed using Twitter.RestClient. The following code example shows how to retrieve tweets from the
+authenticated user&#x27;s timeline.
+
+```javascript
+var Twitter = require(&#x27;node-twitter&#x27;);
+
+var twitterRestClient = new Twitter.<span class="apidocCodeKeywordSpan">RestClient</span>(
+    &#x27;CONSUMER_KEY&#x27;,
+    &#x27;CONSUMER_SECRET&#x27;,
+    &#x27;TOKEN&#x27;,
+    &#x27;TOKEN_SECRET&#x27;
+);
+
+twitterRestClient.statusesHomeTimeline({}, function(error, result) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.super_" id="apidoc.element.node-twitter.RestClient.super_">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.</span>super_
+        <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_ = function (consumerKey, consumerSecret, token, tokenSecret)
+{
+    Events.EventEmitter.call(this);
+
+<span class="apidocCodeCommentSpan">    /** @private */
+</span>    this._apiBaseUrlString = null;
+    /** @private */
+    this._apiVersion = null;
+    /** @private */
+    this._oauth = {
+        consumer_key: consumerKey,
+        consumer_secret: consumerSecret,
+        token: token,
+        token_secret: tokenSecret
+    };
+    /** @private */
+    this._connections = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-twitter.RestClient.prototype" id="apidoc.module.node-twitter.RestClient.prototype">module node-twitter.RestClient.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.applicationRateLimitStatus" id="apidoc.element.node-twitter.RestClient.prototype.applicationRateLimitStatus">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>applicationRateLimitStatus
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applicationRateLimitStatus = function (parameters, callback)
+{
+    this._createGetRequest(&#x27;application/rate_limit_status&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.directMessages" id="apidoc.element.node-twitter.RestClient.prototype.directMessages">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>directMessages
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">directMessages = function (parameters, callback)
+{
+    this._validator.validateCount(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateMaxId(parameters);
+    this._validator.validatePage(parameters);
+    this._validator.validateSinceId(parameters);
+    this._validator.validateSkipStatus(parameters);
+
+    this._createGetRequest(&#x27;direct_messages&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.directMessagesDestroy" id="apidoc.element.node-twitter.RestClient.prototype.directMessagesDestroy">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>directMessagesDestroy
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">directMessagesDestroy = function (parameters, callback)
+{
+    var id = parameters[&#x27;id&#x27;];
+    if (id === undefined)
+    {
+        throw new Error(&#x27;Missing required parameter: id.&#x27;);
+    }
+
+    this._validator.validateId(parameters);
+    this._validator.validateIncludeEntities(parameters);
+
+    var resource = &#x27;direct_messages/destroy/&#x27; + id;
+
+    // Remove the id key from the list of query parameters.
+    delete(parameters[&#x27;id&#x27;]);
+
+    this._createPostRequest(resource, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.directMessagesNew" id="apidoc.element.node-twitter.RestClient.prototype.directMessagesNew">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>directMessagesNew
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">directMessagesNew = function (parameters, callback)
+{
+    this._validator.validateUserId(parameters);
+    this._validator.validateScreenName(parameters);
+    this._validator.validateText(parameters);
+
+    this._createPostRequest(&#x27;direct_messages/new&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.directMessagesSent" id="apidoc.element.node-twitter.RestClient.prototype.directMessagesSent">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>directMessagesSent
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">directMessagesSent = function (parameters, callback)
+{
+    this._validator.validateCount(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateMaxId(parameters);
+    this._validator.validatePage(parameters);
+    this._validator.validateSinceId(parameters);
+
+    this._createGetRequest(&#x27;direct_messages/sent&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.followersIds" id="apidoc.element.node-twitter.RestClient.prototype.followersIds">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>followersIds
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">followersIds = function (parameters, callback)
+{
+    var screenName = parameters[&#x27;screen_name&#x27;];
+    var userId = parameters[&#x27;user_id&#x27;];
+    if (screenName === undefined &#x26;&#x26; userId === undefined)
+    {
+        throw new Error(&#x27;Missing required parameter: screen_name or user_id.&#x27;);
+    }
+
+    this._validator.validateScreenName(parameters);
+    this._validator.validateUserId(parameters);
+
+    // To work around JavaScript&#x27;s inability to handle large numbers
+    // indicate IDs should be returned as strings
+    parameters[&#x27;stringify_ids&#x27;] = true;
+
+    this._createGetRequest(&#x27;followers/ids&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.friendsIds" id="apidoc.element.node-twitter.RestClient.prototype.friendsIds">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>friendsIds
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">friendsIds = function (parameters, callback)
+{
+    this._validator.validateScreenName(parameters);
+    this._validator.validateUserId(parameters);
+
+    // To work around JavaScript&#x27;s inability to handle large numbers
+    // indicate IDs should be returned as strings
+    parameters[&#x27;stringify_ids&#x27;] = true;
+
+    this._createGetRequest(&#x27;friends/ids&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.friendsList" id="apidoc.element.node-twitter.RestClient.prototype.friendsList">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>friendsList
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">friendsList = function (parameters, callback)
+{
+    this._validator.validateScreenName(parameters);
+    this._validator.validateUserId(parameters);
+
+    // To work around JavaScript&#x27;s inability to handle large numbers
+    // indicate IDs should be returned as strings
+    parameters[&#x27;stringify_ids&#x27;] = true;
+
+    this._createGetRequest(&#x27;friends/list&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesDestroy" id="apidoc.element.node-twitter.RestClient.prototype.statusesDestroy">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesDestroy
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesDestroy = function (parameters, callback)
+{
+    var id = parameters[&#x27;id&#x27;];
+    if (id === undefined)
+    {
+        throw new Error(&#x27;Missing required parameter: id.&#x27;);
+    }
+
+    this._validator.validateId(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateTrimUser(parameters);
+
+    var resource = &#x27;statuses/destroy/&#x27; + id;
+
+    // Remove the id key from the list of query parameters.
+    delete(parameters[&#x27;id&#x27;]);
+
+    this._createPostRequest(resource, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesHomeTimeline" id="apidoc.element.node-twitter.RestClient.prototype.statusesHomeTimeline">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesHomeTimeline
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesHomeTimeline = function (parameters, callback)
+{
+    this._validator.validateContributorDetails(parameters);
+    this._validator.validateCount(parameters);
+    this._validator.validateExcludeReplies(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateIncludeRetweets(parameters);
+    this._validator.validateMaxId(parameters);
+    this._validator.validatePage(parameters);
+    this._validator.validateSinceId(parameters);
+    this._validator.validateTrimUser(parameters);
+
+	this._createGetRequest(&#x27;statuses/home_timeline&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var twitterRestClient = new Twitter.RestClient(
+&#x27;CONSUMER_KEY&#x27;,
+&#x27;CONSUMER_SECRET&#x27;,
+&#x27;TOKEN&#x27;,
+&#x27;TOKEN_SECRET&#x27;
+);
+
+twitterRestClient.<span class="apidocCodeKeywordSpan">statusesHomeTimeline</span>({}, function(error, result) {
+if (error)
+{
+    console.log(&#x27;Error: &#x27; + (error.code ? error.code + &#x27; &#x27; + error.message : error.message));
+}
+
+if (result)
+{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesMentions" id="apidoc.element.node-twitter.RestClient.prototype.statusesMentions">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesMentions
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesMentions = function (parameters, callback)
+{
+    this._validator.validateContributorDetails(parameters);
+    this._validator.validateCount(parameters);
+    this._validator.validateExcludeReplies(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateIncludeRetweets(parameters);
+    this._validator.validateMaxId(parameters);
+    this._validator.validatePage(parameters);
+    this._validator.validateSinceId(parameters);
+    this._validator.validateTrimUser(parameters);
+
+    this._createGetRequest(&#x27;statuses/mentions&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesOEmbed" id="apidoc.element.node-twitter.RestClient.prototype.statusesOEmbed">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesOEmbed
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesOEmbed = function (parameters, callback)
+{
+    var id = parameters[&#x27;id&#x27;];
+    if (id === undefined)
+    {
+        var url = parameters[&#x27;url&#x27;];
+        if (url === undefined)
+        {
+            throw new Error(&#x27;Missing required parameter: id or url.&#x27;);
+        }
+    }
+
+    this._validator.validateId(parameters);
+    this._validator.validateUrl(parameters);
+
+    this._validator.validateAlign(parameters);
+    this._validator.validateHideMedia(parameters);
+    this._validator.validateHideThread(parameters);
+    this._validator.validateLanguage(parameters);
+    this._validator.validateMaxWidth(parameters);
+    this._validator.validateOmitScript(parameters);
+    this._validator.validateRelated(parameters);
+
+    var resource = &#x27;statuses/oembed&#x27;;
+
+    this._createGetRequest(resource, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesPublicTimeline" id="apidoc.element.node-twitter.RestClient.prototype.statusesPublicTimeline">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesPublicTimeline
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesPublicTimeline = function (parameters, callback)
+{
+    this._validator.validateCount(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateTrimUser(parameters);
+
+    this._createGetRequest(&#x27;statuses/public_timeline&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweet" id="apidoc.element.node-twitter.RestClient.prototype.statusesRetweet">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweet
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesRetweet = function (parameters, callback)
+{
+    var id = parameters[&#x27;id&#x27;];
+    if (id === undefined)
+    {
+        throw new Error(&#x27;Missing required parameter: id.&#x27;);
+    }
+
+    this._validator.validateId(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateCount(parameters);
+    this._validator.validatePage(parameters);
+    this._validator.validateTrimUser(parameters);
+
+    var resource = &#x27;statuses/retweet/&#x27; + id;
+
+    // Remove the id key from the list of query parameters.
+    delete(parameters[&#x27;id&#x27;]);
+
+    this._createPostRequest(resource, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedBy" id="apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedBy">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweetedBy
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesRetweetedBy = function (parameters, callback)
+{
+    var id = parameters[&#x27;id&#x27;];
+    if (id === undefined)
+    {
+        throw new Error(&#x27;Missing required parameter: id.&#x27;);
+    }
+
+    this._validator.validateId(parameters);
+    this._validator.validateCount(parameters);
+    this._validator.validatePage(parameters);
+
+    var resource = &#x27;statuses/&#x27; + id + &#x27;/retweeted_by&#x27;;
+
+    // Remove the id key from the list of query parameters.
+    delete(parameters[&#x27;id&#x27;]);
+
+    this._createGetRequest(resource, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedByIds" id="apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedByIds">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweetedByIds
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesRetweetedByIds = function (parameters, callback)
+{
+    var id = parameters[&#x27;id&#x27;];
+    if (id === undefined)
+    {
+        throw new Error(&#x27;Missing required parameter: id.&#x27;);
+    }
+
+    this._validator.validateId(parameters);
+    this._validator.validateCount(parameters);
+    this._validator.validatePage(parameters);
+    this._validator.validateStringifyIds(parameters);
+
+    var resource = &#x27;statuses/&#x27; + id + &#x27;/retweeted_by/ids&#x27;;
+
+    // Remove the id key from the list of query parameters.
+    delete(parameters[&#x27;id&#x27;]);
+
+    // To work around JavaScript&#x27;s inability to handle large numbers
+    // indicate IDs should be returned as strings
+    parameters[&#x27;stringify_ids&#x27;] = true;
+
+    this._createGetRequest(resource, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedByMe" id="apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedByMe">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweetedByMe
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesRetweetedByMe = function (parameters, callback)
+{
+    this._validator.validateCount(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateMaxId(parameters);
+    this._validator.validatePage(parameters);
+    this._validator.validateSinceId(parameters);
+    this._validator.validateTrimUser(parameters);
+
+    this._createGetRequest(&#x27;statuses/retweeted_by_me&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedByUser" id="apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedByUser">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweetedByUser
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesRetweetedByUser = function (parameters, callback)
+{
+    this._validator.validateCount(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateMaxId(parameters);
+    this._validator.validatePage(parameters);
+    this._validator.validateScreenName(parameters);
+    this._validator.validateSinceId(parameters);
+    this._validator.validateTrimUser(parameters);
+    this._validator.validateUserId(parameters);
+
+    this._createGetRequest(&#x27;statuses/retweeted_by_user&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedToMe" id="apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedToMe">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweetedToMe
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesRetweetedToMe = function (parameters, callback)
+{
+    this._validator.validateCount(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateMaxId(parameters);
+    this._validator.validatePage(parameters);
+    this._validator.validateSinceId(parameters);
+    this._validator.validateTrimUser(parameters);
+
+    this._createGetRequest(&#x27;statuses/retweeted_to_me&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedToUser" id="apidoc.element.node-twitter.RestClient.prototype.statusesRetweetedToUser">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweetedToUser
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesRetweetedToUser = function (parameters, callback)
+{
+    this._validator.validateCount(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateMaxId(parameters);
+    this._validator.validatePage(parameters);
+    this._validator.validateScreenName(parameters);
+    this._validator.validateSinceId(parameters);
+    this._validator.validateTrimUser(parameters);
+    this._validator.validateUserId(parameters);
+
+    this._createGetRequest(&#x27;statuses/retweeted_to_user&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweets" id="apidoc.element.node-twitter.RestClient.prototype.statusesRetweets">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweets
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesRetweets = function (parameters, callback)
+{
+    var id = parameters[&#x27;id&#x27;];
+    if (id === undefined)
+    {
+        throw new Error(&#x27;Missing required parameter: id.&#x27;);
+    }
+
+    this._validator.validateId(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateCount(parameters);
+    this._validator.validatePage(parameters);
+    this._validator.validateTrimUser(parameters);
+
+    var resource = &#x27;statuses/retweets/&#x27; + id;
+
+    // Remove the id key from the list of query parameters.
+    delete(parameters[&#x27;id&#x27;]);
+
+    this._createGetRequest(resource, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesRetweetsOfMe" id="apidoc.element.node-twitter.RestClient.prototype.statusesRetweetsOfMe">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesRetweetsOfMe
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesRetweetsOfMe = function (parameters, callback)
+{
+    this._validator.validateCount(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateMaxId(parameters);
+    this._validator.validatePage(parameters);
+    this._validator.validateSinceId(parameters);
+    this._validator.validateTrimUser(parameters);
+
+    this._createGetRequest(&#x27;statuses/retweets_of_me&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesShow" id="apidoc.element.node-twitter.RestClient.prototype.statusesShow">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesShow
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesShow = function (parameters, callback)
+{
+    var id = parameters[&#x27;id&#x27;];
+    if (id === undefined)
+    {
+        throw new Error(&#x27;Missing required parameter: id.&#x27;);
+    }
+
+    this._validator.validateId(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateTrimUser(parameters);
+
+    var resource = &#x27;statuses/show&#x27;;
+
+    this._createGetRequest(resource, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesUpdate" id="apidoc.element.node-twitter.RestClient.prototype.statusesUpdate">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesUpdate
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesUpdate = function (parameters, callback)
+{
+    var status = parameters[&#x27;status&#x27;];
+    if (status === undefined)
+    {
+        throw new Error(&#x27;Missing required parameter: status.&#x27;);
+    }
+
+    this._validator.validateDisplayCoordinates(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateInReplyToStatusId(parameters);
+    this._validator.validatePlaceId(parameters);
+    this._validator.validateLatitude(parameters);
+    this._validator.validateLongitude(parameters);
+    this._validator.validateStatus(parameters);
+    this._validator.validateTrimUser(parameters);
+
+    var resource = &#x27;statuses/update&#x27;;
+
+    this._createPostRequest(resource, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesUpdateWithMedia" id="apidoc.element.node-twitter.RestClient.prototype.statusesUpdateWithMedia">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesUpdateWithMedia
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesUpdateWithMedia = function (parameters, callback)
+{
+    var uploadClient = new UploadClient(
+        this._oauth.consumer_key,
+        this._oauth.consumer_secret,
+        this._oauth.token,
+        this._oauth.token_secret
+    );
+
+    uploadClient.statusesUpdateWithMedia(parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var twitterRestClient = new Twitter.RestClient(
+&#x27;CONSUMER_KEY&#x27;,
+&#x27;CONSUMER_SECRET&#x27;,
+&#x27;TOKEN&#x27;,
+&#x27;TOKEN_SECRET&#x27;
+);
+
+twitterRestClient.<span class="apidocCodeKeywordSpan">statusesUpdateWithMedia</span>(
+{
+    &#x27;status&#x27;: &#x27;Posting a tweet w/ attached media.&#x27;,
+    &#x27;media[]&#x27;: &#x27;/some/absolute/file/path.jpg&#x27;
+},
+function(error, result) {
+    if (error)
+    {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.statusesUserTimeline" id="apidoc.element.node-twitter.RestClient.prototype.statusesUserTimeline">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>statusesUserTimeline
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesUserTimeline = function (parameters, callback)
+{
+    this._validator.validateContributorDetails(parameters);
+    this._validator.validateCount(parameters);
+    this._validator.validateExcludeReplies(parameters);
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateIncludeRetweets(parameters);
+    this._validator.validateMaxId(parameters);
+    this._validator.validatePage(parameters);
+    this._validator.validateSinceId(parameters);
+    this._validator.validateScreenName(parameters);
+    this._validator.validateTrimUser(parameters);
+    this._validator.validateUserId(parameters);
+
+    this._createGetRequest(&#x27;statuses/user_timeline&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.userFavorites" id="apidoc.element.node-twitter.RestClient.prototype.userFavorites">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>userFavorites
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">userFavorites = function (parameters, callback)
+{
+    var screenName = parameters[&#x27;screen_name&#x27;];
+    var userId = parameters[&#x27;user_id&#x27;];
+    if (screenName === undefined &#x26;&#x26; userId === undefined)
+    {
+        throw new Error(&#x27;Missing required parameter: screen_name or user_id.&#x27;);
+    }
+
+    this._validator.validateScreenName(parameters);
+    this._validator.validateUserId(parameters);
+
+    // To work around JavaScript&#x27;s inability to handle large numbers
+    // indicate IDs should be returned as strings
+    parameters[&#x27;stringify_ids&#x27;] = true;
+
+    this._createGetRequest(&#x27;favorites/list&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.prototype.usersLookup" id="apidoc.element.node-twitter.RestClient.prototype.usersLookup">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.prototype.</span>usersLookup
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">usersLookup = function (parameters, callback)
+{
+    this._validator.validateIncludeEntities(parameters);
+    this._validator.validateScreenName(parameters);
+    this._validator.validateUserId(parameters);
+
+    this._createGetRequest(&#x27;users/lookup&#x27;, this._format, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-twitter.RestClient.super_" id="apidoc.module.node-twitter.RestClient.super_">module node-twitter.RestClient.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.super_.super_" id="apidoc.element.node-twitter.RestClient.super_.super_">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-twitter.RestClient.super_.prototype" id="apidoc.module.node-twitter.RestClient.super_.prototype">module node-twitter.RestClient.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.super_.prototype._connectionForKey" id="apidoc.element.node-twitter.RestClient.super_.prototype._connectionForKey">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_connectionForKey
+        <span class="apidocSignatureSpan">(aKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_connectionForKey = function (aKey)
+{
+    return this._connections[aKey];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.super_.prototype._createEventListenersForRequest" id="apidoc.element.node-twitter.RestClient.super_.prototype._createEventListenersForRequest">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_createEventListenersForRequest
+        <span class="apidocSignatureSpan">(aRequest)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createEventListenersForRequest = function (aRequest)
+{
+    var self = this;
+
+    aRequest.on(&#x27;close&#x27;, function() {
+        self._requestDidClose(aRequest);
+    });
+
+    aRequest.on(&#x27;data&#x27;, function(data) {
+        self._requestDidReceiveData(aRequest, data);
+    });
+
+    aRequest.on(&#x27;end&#x27;, function() {
+        self._requestDidEnd(aRequest);
+    });
+
+    aRequest.on(&#x27;error&#x27;, function(error) {
+        self._requestDidFailWithError(aRequest, error);
+    });
+
+    aRequest.on(&#x27;response&#x27;, function(aResponse) {
+        self._requestDidReceiveResponse(aRequest, aResponse);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		httpRequest.hash = Crypto.createHash(&#x27;sha1&#x27;).update(
+			JSON.stringify(httpRequest.headers), &#x27;utf8&#x27;
+		).digest(&#x27;hex&#x27;);
+		self._connections[httpRequest.hash] = {
+			callback: callback, data: &#x27;&#x27;, httpRequest: httpRequest
+		};
+
+		self.<span class="apidocCodeKeywordSpan">_createEventListenersForRequest</span>(httpRequest);
+	});
+};
+
+UploadClient.prototype._mimeTypeForPathExtension = function(pathExtension)
+{
+var mimeType = null;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.super_.prototype._createGetRequest" id="apidoc.element.node-twitter.RestClient.super_.prototype._createGetRequest">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_createGetRequest
+        <span class="apidocSignatureSpan">(resource, format, parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createGetRequest = function (resource, format, parameters, callback)
+{
+    var self = this;
+
+    var requestUrlString = this._apiBaseUrlString + &#x27;/&#x27;;
+    if (this._apiVersion !== null)
+    {
+        requestUrlString += this._apiVersion + &#x27;/&#x27;;
+    }
+    requestUrlString += resource + &#x27;.&#x27; + format;
+
+    var requestQueryString = QueryString.stringify(parameters);
+    if (requestQueryString !== undefined &#x26;&#x26; requestQueryString !== null &#x26;&#x26; requestQueryString.length &#x3e; 0)
+    {
+        requestUrlString = requestUrlString + &#x27;?&#x27; + requestQueryString;
+    }
+
+    var requestOptions = {method: &#x27;GET&#x27;, url: requestUrlString, oauth: this.oauth()};
+
+    var httpRequest = request.get(requestOptions);
+    httpRequest.hash = Crypto.createHash(&#x27;sha1&#x27;).update(JSON.stringify(httpRequest.headers), &#x27;utf8&#x27;).digest(&#x27;hex&#x27;);
+    this._connections[httpRequest.hash] = {callback: callback, data: &#x27;&#x27;, httpRequest: httpRequest};
+
+
+    this._createEventListenersForRequest(httpRequest);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.super_.prototype._createPostRequest" id="apidoc.element.node-twitter.RestClient.super_.prototype._createPostRequest">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_createPostRequest
+        <span class="apidocSignatureSpan">(resource, format, parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createPostRequest = function (resource, format, parameters, callback)
+{
+    var self = this;
+
+    var requestUrlString = this._apiBaseUrlString + &#x27;/&#x27;;
+    if (this._apiVersion !== null)
+    {
+        requestUrlString += this._apiVersion + &#x27;/&#x27;;
+    }
+    requestUrlString += resource + &#x27;.&#x27; + format;
+
+    var requestOptions = {method: &#x27;POST&#x27;, url: requestUrlString, oauth: this.oauth(), form: parameters};
+
+    var httpRequest = request.post(requestOptions);
+    httpRequest.hash = Crypto.createHash(&#x27;sha1&#x27;).update(JSON.stringify(httpRequest.headers), &#x27;utf8&#x27;).digest(&#x27;hex&#x27;);
+    this._connections[httpRequest.hash] = {callback: callback, data: &#x27;&#x27;, httpRequest: httpRequest};
+
+    this._createEventListenersForRequest(httpRequest);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   this._validator.validateLatitude(parameters);
+   this._validator.validateLongitude(parameters);
+   this._validator.validateMedia(parameters);
+   this._validator.validateStatus(parameters);
+
+   var resource = &#x27;statuses/update_with_media&#x27;;
+
+   this.<span class="apidocCodeKeywordSpan">_createPostRequest</span>(resource, &#x27;json&#x27;, parameters, callback);
+};
+
+/**
+* Creates an HTTP POST request.
+*
+* @private
+* @this {Client}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.super_.prototype._removeConnectionForKey" id="apidoc.element.node-twitter.RestClient.super_.prototype._removeConnectionForKey">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_removeConnectionForKey
+        <span class="apidocSignatureSpan">(aKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_removeConnectionForKey = function (aKey)
+{
+    if (this._connectionForKey(aKey) !== undefined)
+    {
+        delete this._connections[aKey];
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.super_.prototype._requestDidClose" id="apidoc.element.node-twitter.RestClient.super_.prototype._requestDidClose">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_requestDidClose
+        <span class="apidocSignatureSpan">(aRequest)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_requestDidClose = function (aRequest)
+{
+    var connection = this._connectionForKey(aRequest.hash);
+    if (connection === undefined) return;
+
+    var error = undefined;
+    var result = undefined;
+    try
+    {
+        result = JSON.parse(connection.data);
+    }
+    catch (e)
+    {
+        error = e;
+        result = undefined;
+    }
+
+    if (connection.callback instanceof Function)
+    {
+        connection.callback(error, result);
+    }
+
+    this._removeConnectionForKey(aRequest.hash);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.super_.prototype._requestDidEnd" id="apidoc.element.node-twitter.RestClient.super_.prototype._requestDidEnd">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_requestDidEnd
+        <span class="apidocSignatureSpan">(aRequest)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_requestDidEnd = function (aRequest)
+{
+    var connection = this._connectionForKey(aRequest.hash);
+    if (connection === undefined) return;
+
+    var error = undefined;
+    var result = undefined;
+    try
+    {
+        result = JSON.parse(connection.data);
+    }
+    catch (e)
+    {
+        error = e;
+        result = undefined;
+    }
+
+    if (connection.callback instanceof Function)
+    {
+        connection.callback(error, result);
+    }
+
+    this._removeConnectionForKey(aRequest.hash);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.super_.prototype._requestDidFailWithError" id="apidoc.element.node-twitter.RestClient.super_.prototype._requestDidFailWithError">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_requestDidFailWithError
+        <span class="apidocSignatureSpan">(aRequest, aError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_requestDidFailWithError = function (aRequest, aError)
+{
+    var connection = this._connectionForKey(aRequest.hash);
+    if (connection === undefined) return;
+
+    if (connection.callback instanceof Function)
+    {
+        connection.callback(aError, undefined);
+    }
+
+    this._removeConnectionForKey(aRequest.hash);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.super_.prototype._requestDidReceiveData" id="apidoc.element.node-twitter.RestClient.super_.prototype._requestDidReceiveData">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_requestDidReceiveData
+        <span class="apidocSignatureSpan">(aRequest, aData)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_requestDidReceiveData = function (aRequest, aData)
+{
+    var connection = this._connectionForKey(aRequest.hash);
+    if (connection === undefined) return;
+
+    var receivedData = connection[&#x27;data&#x27;] + aData.toString(&#x27;utf8&#x27;);
+    connection[&#x27;data&#x27;] = receivedData;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.super_.prototype._requestDidReceiveResponse" id="apidoc.element.node-twitter.RestClient.super_.prototype._requestDidReceiveResponse">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>_requestDidReceiveResponse
+        <span class="apidocSignatureSpan">(aRequest, aResponse)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_requestDidReceiveResponse = function (aRequest, aResponse)
+{
+    var connection = this._connectionForKey(aRequest.hash);
+    var hasError = false;
+    if (connection !== undefined)
+    {
+        connection[&#x27;data&#x27;] = &#x27;&#x27;;
+    }
+
+    // Error handling for status codes documented at
+    // https://dev.twitter.com/docs/error-codes-responses
+    var error = null;
+    if (aResponse.statusCode !== 200)
+    {
+      error = new Error();
+      error.code = aResponse.statusCode;
+    }
+
+    switch(aResponse.statusCode)
+    {
+        case 304:
+            error.message = &#x27;Not Modified.&#x27;;
+            break;
+        case 400:
+            error.message = &#x27;Bad Request&#x27;;
+            break;
+        case 401:
+            error.message = &#x27;Unauthorized&#x27;;
+            break;
+        case 403:
+            error.message = &#x27;Forbidden&#x27;;
+            break;
+        case 404:
+            error.message = &#x27;Not Found&#x27;;
+            break;
+        case 429:
+            error.message = &#x27;Too Many Requests&#x27;;
+            break;
+        case 406:
+            error.message = &#x27;Not Acceptable&#x27;;
+            break;
+        case 420:
+            error.message = &#x27;Enhance Your Calm&#x27;;
+            break;
+        case 500:
+            error.message = &#x27;Internal Server Error&#x27;;
+            break;
+        case 502:
+            error.message = &#x27;Bad Gateway&#x27;;
+            break;
+        case 503:
+            error.message = &#x27;Service Unavailable&#x27;;
+            break;
+    }
+
+    if (error !== null)
+    {
+        this._requestDidFailWithError(aRequest, error);
+
+        return;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestClient.super_.prototype.oauth" id="apidoc.element.node-twitter.RestClient.super_.prototype.oauth">
+        function <span class="apidocSignatureSpan">node-twitter.RestClient.super_.prototype.</span>oauth
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">oauth = function ()
+{
+    return this._oauth;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	// Prepare request options
+    var requestUrlString = this._apiBaseUrlString + &#x27;/&#x27; + this._apiVersion +
+		&#x27;/&#x27; + resource + &#x27;.&#x27; + format;
+    var requestOptions = {
+        headers: { &#x27;content-type&#x27;: &#x27;multipart/form-data&#x27; },
+        method: &#x27;POST&#x27;,
+        url: requestUrlString,
+        oauth: this.<span class="apidocCodeKeywordSpan">oauth</span>(),
+        multipart: multipartItems
+    };
+
+	// Asynchronously read the media file and post the request
+    var self = this;
+	fs.readFile(mediaFilePath, function (err, data) {
+		if (err) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-twitter.RestParameterValidator" id="apidoc.module.node-twitter.RestParameterValidator">module node-twitter.RestParameterValidator</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.RestParameterValidator" id="apidoc.element.node-twitter.RestParameterValidator.RestParameterValidator">
+        function <span class="apidocSignatureSpan">node-twitter.</span>RestParameterValidator
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RestParameterValidator = function ()
+{
+    Object.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.super_" id="apidoc.element.node-twitter.RestParameterValidator.super_">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Object() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-twitter.RestParameterValidator.prototype" id="apidoc.module.node-twitter.RestParameterValidator.prototype">module node-twitter.RestParameterValidator.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateAlign" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateAlign">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateAlign
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateAlign = function (parameters)
+{
+    var type = &#x27;string&#x27;;
+    var align = parameters[&#x27;align&#x27;];
+    if (align !== undefined &#x26;&#x26; typeof align !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateContributorDetails" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateContributorDetails">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateContributorDetails
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateContributorDetails = function (parameters)
+{
+	var contributorDetails = parameters[&#x27;contributor_details&#x27;];
+    if (contributorDetails !== undefined &#x26;&#x26; typeof contributorDetails !== &#x27;boolean&#x27;)
+    {
+        throw new Error(&#x27;Expected boolean.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateCount" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateCount">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateCount
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateCount = function (parameters)
+{
+    var count = parameters[&#x27;count&#x27;];
+    if (count !== undefined &#x26;&#x26; typeof count !== &#x27;number&#x27;)
+    {
+        throw new Error(&#x27;Expected number.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateDisplayCoordinates" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateDisplayCoordinates">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateDisplayCoordinates
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateDisplayCoordinates = function (parameters)
+{
+    var type = &#x27;boolean&#x27;;
+    var displayCoordinates = parameters[&#x27;display_coordinates&#x27;];
+    if (displayCoordinates !== undefined &#x26;&#x26; typeof displayCoordinates !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var media = parameters[&#x27;media[]&#x27;];
+if (media === undefined)
+{
+    throw new Error(&#x27;Missing required parameter: media[].&#x27;);
+}
+
+this._validator.<span class="apidocCodeKeywordSpan">validateDisplayCoordinates</span>(parameters);
+this._validator.validateInReplyToStatusId(parameters);
+this._validator.validatePlaceId(parameters);
+this._validator.validatePossiblySensitive(parameters);
+this._validator.validateLatitude(parameters);
+this._validator.validateLongitude(parameters);
+this._validator.validateMedia(parameters);
+this._validator.validateStatus(parameters);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateExcludeReplies" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateExcludeReplies">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateExcludeReplies
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateExcludeReplies = function (parameters)
+{
+    var excludeReplies = parameters[&#x27;exclude_replies&#x27;];
+    if (excludeReplies !== undefined &#x26;&#x26; typeof excludeReplies !== &#x27;boolean&#x27;)
+    {
+        throw new Error(&#x27;Expected boolean.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateHideMedia" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateHideMedia">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateHideMedia
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateHideMedia = function (parameters)
+{
+    var type = &#x27;boolean&#x27;;
+    var hideMedia = parameters[&#x27;hide_media&#x27;];
+    if (hideMedia !== undefined &#x26;&#x26; typeof hideMedia !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateHideThread" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateHideThread">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateHideThread
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateHideThread = function (parameters)
+{
+    var type = &#x27;boolean&#x27;;
+    var hideThread = parameters[&#x27;hide_thread&#x27;];
+    if (hideThread !== undefined &#x26;&#x26; typeof hideThread !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateId" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateId">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateId
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateId = function (parameters)
+{
+    var type = &#x27;string&#x27;;
+    var statusId = parameters[&#x27;id&#x27;];
+    if (statusId !== undefined &#x26;&#x26; typeof statusId !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateInReplyToStatusId" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateInReplyToStatusId">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateInReplyToStatusId
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateInReplyToStatusId = function (parameters)
+{
+    var type = &#x27;string&#x27;;
+    var inReplyToStatusId = parameters[&#x27;in_reply_to_status_id&#x27;];
+    if (inReplyToStatusId !== undefined &#x26;&#x26; typeof inReplyToStatusId !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var media = parameters[&#x27;media[]&#x27;];
+if (media === undefined)
+{
+    throw new Error(&#x27;Missing required parameter: media[].&#x27;);
+}
+
+this._validator.validateDisplayCoordinates(parameters);
+this._validator.<span class="apidocCodeKeywordSpan">validateInReplyToStatusId</span>(parameters);
+this._validator.validatePlaceId(parameters);
+this._validator.validatePossiblySensitive(parameters);
+this._validator.validateLatitude(parameters);
+this._validator.validateLongitude(parameters);
+this._validator.validateMedia(parameters);
+this._validator.validateStatus(parameters);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateIncludeEntities" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateIncludeEntities">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateIncludeEntities
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateIncludeEntities = function (parameters)
+{
+    var includeEntities = parameters[&#x27;include_entities&#x27;];
+    if (includeEntities !== undefined &#x26;&#x26; typeof includeEntities !== &#x27;boolean&#x27;)
+    {
+        throw new Error(&#x27;Expected boolean.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateIncludeRetweets" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateIncludeRetweets">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateIncludeRetweets
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateIncludeRetweets = function (parameters)
+{
+    var includeRetweets = parameters[&#x27;include_rts&#x27;];
+    if (includeRetweets !== undefined &#x26;&#x26; typeof includeRetweets !== &#x27;boolean&#x27;)
+    {
+        throw new Error(&#x27;Expected boolean.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateLanguage" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateLanguage">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateLanguage
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateLanguage = function (parameters)
+{
+    var type = &#x27;string&#x27;;
+    var language = parameters[&#x27;lang&#x27;];
+    if (language !== undefined &#x26;&#x26; typeof language !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateLatitude" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateLatitude">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateLatitude
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateLatitude = function (parameters)
+{
+    var type = &#x27;number&#x27;;
+    var latitude = parameters[&#x27;lat&#x27;];
+    if (latitude !== undefined &#x26;&#x26; typeof latitude !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    throw new Error(&#x27;Missing required parameter: media[].&#x27;);
+}
+
+this._validator.validateDisplayCoordinates(parameters);
+this._validator.validateInReplyToStatusId(parameters);
+this._validator.validatePlaceId(parameters);
+this._validator.validatePossiblySensitive(parameters);
+this._validator.<span class="apidocCodeKeywordSpan">validateLatitude</span>(parameters);
+this._validator.validateLongitude(parameters);
+this._validator.validateMedia(parameters);
+this._validator.validateStatus(parameters);
+
+var resource = &#x27;statuses/update_with_media&#x27;;
+
+this._createPostRequest(resource, &#x27;json&#x27;, parameters, callback);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateLongitude" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateLongitude">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateLongitude
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateLongitude = function (parameters)
+{
+    var type = &#x27;number&#x27;;
+    var longitude = parameters[&#x27;long&#x27;];
+    if (longitude !== undefined &#x26;&#x26; typeof longitude !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+
+    this._validator.validateDisplayCoordinates(parameters);
+    this._validator.validateInReplyToStatusId(parameters);
+    this._validator.validatePlaceId(parameters);
+    this._validator.validatePossiblySensitive(parameters);
+    this._validator.validateLatitude(parameters);
+    this._validator.<span class="apidocCodeKeywordSpan">validateLongitude</span>(parameters);
+    this._validator.validateMedia(parameters);
+    this._validator.validateStatus(parameters);
+
+    var resource = &#x27;statuses/update_with_media&#x27;;
+
+    this._createPostRequest(resource, &#x27;json&#x27;, parameters, callback);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateMaxId" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateMaxId">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateMaxId
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateMaxId = function (parameters)
+{
+    var maxId = parameters[&#x27;max_id&#x27;];
+    if (maxId !== undefined &#x26;&#x26; typeof maxId !== &#x27;number&#x27;)
+    {
+        throw new Error(&#x27;Expected number.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateMaxWidth" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateMaxWidth">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateMaxWidth
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateMaxWidth = function (parameters)
+{
+    var type = &#x27;number&#x27;;
+    var maxWidth = parameters[&#x27;maxwidth&#x27;];
+    if (maxWidth !== undefined &#x26;&#x26; typeof maxWidth !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type+ &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateMedia" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateMedia">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateMedia
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateMedia = function (parameters)
+{
+    var type = &#x27;string&#x27;;
+    var media = parameters[&#x27;media[]&#x27;];
+    if (media !== undefined &#x26;&#x26; typeof media !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+
+    media = path.normalize(media);
+    if (fs.existsSync(media) === false)
+    {
+        throw new Error(&#x27;File path does not exist: &#x27; + media);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    this._validator.validateDisplayCoordinates(parameters);
+    this._validator.validateInReplyToStatusId(parameters);
+    this._validator.validatePlaceId(parameters);
+    this._validator.validatePossiblySensitive(parameters);
+    this._validator.validateLatitude(parameters);
+    this._validator.validateLongitude(parameters);
+    this._validator.<span class="apidocCodeKeywordSpan">validateMedia</span>(parameters);
+    this._validator.validateStatus(parameters);
+
+    var resource = &#x27;statuses/update_with_media&#x27;;
+
+    this._createPostRequest(resource, &#x27;json&#x27;, parameters, callback);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateOmitScript" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateOmitScript">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateOmitScript
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateOmitScript = function (parameters)
+{
+    var type = &#x27;boolean&#x27;;
+    var omitScript = parameters[&#x27;omit_script&#x27;];
+    if (omitScript !== undefined &#x26;&#x26; typeof omitScript !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validatePage" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validatePage">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validatePage
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validatePage = function (parameters)
+{
+    var page = parameters[&#x27;page&#x27;];
+    if (page !== undefined &#x26;&#x26; typeof page !== &#x27;number&#x27;)
+    {
+        throw new Error(&#x27;Expected number.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validatePlaceId" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validatePlaceId">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validatePlaceId
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validatePlaceId = function (parameters)
+{
+    var type = &#x27;string&#x27;;
+    var placeId = parameters[&#x27;place_id&#x27;];
+    if (placeId !== undefined &#x26;&#x26; typeof placeId !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (media === undefined)
+{
+    throw new Error(&#x27;Missing required parameter: media[].&#x27;);
+}
+
+this._validator.validateDisplayCoordinates(parameters);
+this._validator.validateInReplyToStatusId(parameters);
+this._validator.<span class="apidocCodeKeywordSpan">validatePlaceId</span>(parameters);
+this._validator.validatePossiblySensitive(parameters);
+this._validator.validateLatitude(parameters);
+this._validator.validateLongitude(parameters);
+this._validator.validateMedia(parameters);
+this._validator.validateStatus(parameters);
+
+var resource = &#x27;statuses/update_with_media&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validatePossiblySensitive" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validatePossiblySensitive">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validatePossiblySensitive
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validatePossiblySensitive = function (parameters)
+{
+    var type = &#x27;boolean&#x27;;
+    var possiblySensitive = parameters[&#x27;possibly_sensitive&#x27;];
+    if (possiblySensitive !== undefined &#x26;&#x26; typeof possiblySensitive !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+{
+    throw new Error(&#x27;Missing required parameter: media[].&#x27;);
+}
+
+this._validator.validateDisplayCoordinates(parameters);
+this._validator.validateInReplyToStatusId(parameters);
+this._validator.validatePlaceId(parameters);
+this._validator.<span class="apidocCodeKeywordSpan">validatePossiblySensitive</span>(parameters);
+this._validator.validateLatitude(parameters);
+this._validator.validateLongitude(parameters);
+this._validator.validateMedia(parameters);
+this._validator.validateStatus(parameters);
+
+var resource = &#x27;statuses/update_with_media&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateRelated" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateRelated">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateRelated
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateRelated = function (parameters)
+{
+    var type = &#x27;string&#x27;;
+    var related = parameters[&#x27;related&#x27;];
+    if (related !== undefined &#x26;&#x26; typeof related !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateScreenName" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateScreenName">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateScreenName
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateScreenName = function (parameters)
+{
+    var screenName = parameters[&#x27;screen_name&#x27;];
+    if (screenName !== undefined &#x26;&#x26; typeof screenName !== &#x27;string&#x27;)
+    {
+        throw new Error(&#x27;Expected boolean.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateSinceId" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateSinceId">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateSinceId
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateSinceId = function (parameters)
+{
+    var sinceId = parameters[&#x27;since_id&#x27;];
+    if (sinceId !== undefined &#x26;&#x26; typeof sinceId !== &#x27;number&#x27;)
+    {
+        throw new Error(&#x27;Expected number.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateSkipStatus" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateSkipStatus">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateSkipStatus
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateSkipStatus = function (parameters)
+{
+    var type = &#x27;boolean&#x27;;
+    var skipStatus = parameters[&#x27;skip_status&#x27;];
+    if (skipStatus !== undefined &#x26;&#x26; typeof skipStatus !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateStatus" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateStatus">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateStatus
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateStatus = function (parameters)
+{
+    var type = &#x27;string&#x27;;
+    var status = parameters[&#x27;status&#x27;];
+    if (status !== undefined &#x26;&#x26; typeof status !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._validator.validateDisplayCoordinates(parameters);
+    this._validator.validateInReplyToStatusId(parameters);
+    this._validator.validatePlaceId(parameters);
+    this._validator.validatePossiblySensitive(parameters);
+    this._validator.validateLatitude(parameters);
+    this._validator.validateLongitude(parameters);
+    this._validator.validateMedia(parameters);
+    this._validator.<span class="apidocCodeKeywordSpan">validateStatus</span>(parameters);
+
+    var resource = &#x27;statuses/update_with_media&#x27;;
+
+    this._createPostRequest(resource, &#x27;json&#x27;, parameters, callback);
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateStringifyIds" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateStringifyIds">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateStringifyIds
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateStringifyIds = function (parameters)
+{
+    var type = &#x27;boolean&#x27;;
+    var statusId = parameters[&#x27;stringify_ids&#x27;];
+    if (statusId !== undefined &#x26;&#x26; typeof statusId !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateText" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateText">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateText
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateText = function (parameters)
+{
+    var text = parameters[&#x27;text&#x27;];
+    if (typeof text !== &#x27;string&#x27;)
+    {
+        throw new Error(&#x27;Expected string.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateTrimUser" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateTrimUser">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateTrimUser
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateTrimUser = function (parameters)
+{
+    var trimUser = parameters[&#x27;trim_user&#x27;];
+    if (trimUser !== undefined &#x26;&#x26; typeof trimUser !== &#x27;boolean&#x27;)
+    {
+        throw new Error(&#x27;Expected boolean.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateUrl" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateUrl">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateUrl
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateUrl = function (parameters)
+{
+    var type = &#x27;string&#x27;;
+    var url = parameters[&#x27;url&#x27;];
+    if (url !== undefined &#x26;&#x26; typeof url !== type)
+    {
+        throw new Error(&#x27;Expected &#x27; + type + &#x27;.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.RestParameterValidator.prototype.validateUserId" id="apidoc.element.node-twitter.RestParameterValidator.prototype.validateUserId">
+        function <span class="apidocSignatureSpan">node-twitter.RestParameterValidator.prototype.</span>validateUserId
+        <span class="apidocSignatureSpan">(parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateUserId = function (parameters)
+{
+    var userId = parameters[&#x27;user_id&#x27;];
+    var types = {&#x27;number&#x27;: true, &#x27;string&#x27;: true};
+    if (userId !== undefined &#x26;&#x26; types[(typeof userId)] === false)
+    {
+        throw new Error(&#x27;Expected number.&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-twitter.SearchClient" id="apidoc.module.node-twitter.SearchClient">module node-twitter.SearchClient</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.SearchClient.SearchClient" id="apidoc.element.node-twitter.SearchClient.SearchClient">
+        function <span class="apidocSignatureSpan">node-twitter.</span>SearchClient
+        <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SearchClient = function (consumerKey, consumerSecret, token, tokenSecret)
+{
+    Client.call(this, consumerKey, consumerSecret, token, tokenSecret);
+
+    this._apiBaseUrlString = Constants.RestApiBaseURLString;
+    this._apiVersion = Constants.RestApiVersion;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Search
+
+The Twitter Search API can be accessed using Twitter.SearchClient. The following code example shows how to search for tweets containing
+ the keyword &#x22;node.js&#x22;.
+
+```javascript
+var Twitter = require(&#x27;node-twitter&#x27;);
+
+var twitterSearchClient = new Twitter.<span class="apidocCodeKeywordSpan">SearchClient</span>(
+    &#x27;CONSUMER_KEY&#x27;,
+    &#x27;CONSUMER_SECRET&#x27;,
+    &#x27;TOKEN&#x27;,
+    &#x27;TOKEN_SECRET&#x27;
+);
+
+twitterSearchClient.search({&#x27;q&#x27;: &#x27;node.js&#x27;}, function(error, result) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.SearchClient.super_" id="apidoc.element.node-twitter.SearchClient.super_">
+        function <span class="apidocSignatureSpan">node-twitter.SearchClient.</span>super_
+        <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_ = function (consumerKey, consumerSecret, token, tokenSecret)
+{
+    Events.EventEmitter.call(this);
+
+<span class="apidocCodeCommentSpan">    /** @private */
+</span>    this._apiBaseUrlString = null;
+    /** @private */
+    this._apiVersion = null;
+    /** @private */
+    this._oauth = {
+        consumer_key: consumerKey,
+        consumer_secret: consumerSecret,
+        token: token,
+        token_secret: tokenSecret
+    };
+    /** @private */
+    this._connections = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-twitter.SearchClient.prototype" id="apidoc.module.node-twitter.SearchClient.prototype">module node-twitter.SearchClient.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.SearchClient.prototype.search" id="apidoc.element.node-twitter.SearchClient.prototype.search">
+        function <span class="apidocSignatureSpan">node-twitter.SearchClient.prototype.</span>search
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">search = function (parameters, callback)
+{
+    var q = parameters[&#x27;q&#x27;];
+    if (q === undefined)
+    {
+        throw new Error(&#x27;Missing required parameter: q.&#x27;);
+    }
+
+    this._createGetRequest(&#x27;search/tweets&#x27;, &#x27;json&#x27;, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var twitterSearchClient = new Twitter.SearchClient(
+&#x27;CONSUMER_KEY&#x27;,
+&#x27;CONSUMER_SECRET&#x27;,
+&#x27;TOKEN&#x27;,
+&#x27;TOKEN_SECRET&#x27;
+);
+
+twitterSearchClient.<span class="apidocCodeKeywordSpan">search</span>({&#x27;q&#x27;: &#x27;node.js&#x27;}, function(error, result
+) {
+if (error)
+{
+    console.log(&#x27;Error: &#x27; + (error.code ? error.code + &#x27; &#x27; + error.message : error.message));
+}
+
+if (result)
+{
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-twitter.StreamClient" id="apidoc.module.node-twitter.StreamClient">module node-twitter.StreamClient</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.StreamClient.StreamClient" id="apidoc.element.node-twitter.StreamClient.StreamClient">
+        function <span class="apidocSignatureSpan">node-twitter.</span>StreamClient
+        <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">StreamClient = function (consumerKey, consumerSecret, token, tokenSecret)
+{
+    Client.call(this, consumerKey, consumerSecret, token, tokenSecret);
+
+    this._apiBaseUrlString = Constants.StreamApiBaseURLString;
+    this._apiVersion = Constants.StreamApiVersion;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Streaming
+
+The Twitter Streaming API can be accessed using Twitter.StreamClient. The following code example shows how to catch all tweets containing
+ the keywords &#x22;baseball&#x22;, &#x22;basketball&#x22;, &#x22;football&#x22; or &#x22;hockey&#x22;.
+
+```javascript
+var Twitter = require(&#x27;node-twitter&#x27;);
+
+var twitterStreamClient = new Twitter.<span class="apidocCodeKeywordSpan">StreamClient</span>(
+    &#x27;CONSUMER_KEY&#x27;,
+    &#x27;CONSUMER_SECRET&#x27;,
+    &#x27;TOKEN&#x27;,
+    &#x27;TOKEN_SECRET&#x27;
+);
+
+twitterStreamClient.on(&#x27;close&#x27;, function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.StreamClient.super_" id="apidoc.element.node-twitter.StreamClient.super_">
+        function <span class="apidocSignatureSpan">node-twitter.StreamClient.</span>super_
+        <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_ = function (consumerKey, consumerSecret, token, tokenSecret)
+{
+    Events.EventEmitter.call(this);
+
+<span class="apidocCodeCommentSpan">    /** @private */
+</span>    this._apiBaseUrlString = null;
+    /** @private */
+    this._apiVersion = null;
+    /** @private */
+    this._oauth = {
+        consumer_key: consumerKey,
+        consumer_secret: consumerSecret,
+        token: token,
+        token_secret: tokenSecret
+    };
+    /** @private */
+    this._connections = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-twitter.StreamClient.prototype" id="apidoc.module.node-twitter.StreamClient.prototype">module node-twitter.StreamClient.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.StreamClient.prototype._requestDidClose" id="apidoc.element.node-twitter.StreamClient.prototype._requestDidClose">
+        function <span class="apidocSignatureSpan">node-twitter.StreamClient.prototype.</span>_requestDidClose
+        <span class="apidocSignatureSpan">(aRequest)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_requestDidClose = function (aRequest)
+{
+    Client.prototype._requestDidClose.call(this, aRequest);
+
+    this.emit(&#x27;close&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.StreamClient.prototype._requestDidEnd" id="apidoc.element.node-twitter.StreamClient.prototype._requestDidEnd">
+        function <span class="apidocSignatureSpan">node-twitter.StreamClient.prototype.</span>_requestDidEnd
+        <span class="apidocSignatureSpan">(aRequest)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_requestDidEnd = function (aRequest)
+{
+    Client.prototype._requestDidEnd.call(this, aRequest);
+
+    this.emit(&#x27;end&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.StreamClient.prototype._requestDidFailWithError" id="apidoc.element.node-twitter.StreamClient.prototype._requestDidFailWithError">
+        function <span class="apidocSignatureSpan">node-twitter.StreamClient.prototype.</span>_requestDidFailWithError
+        <span class="apidocSignatureSpan">(aRequest, aError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_requestDidFailWithError = function (aRequest, aError)
+{
+    Client.prototype._requestDidFailWithError.call(this, aRequest, aError);
+
+    this.emit(&#x27;error&#x27;, aError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.StreamClient.prototype._requestDidReceiveData" id="apidoc.element.node-twitter.StreamClient.prototype._requestDidReceiveData">
+        function <span class="apidocSignatureSpan">node-twitter.StreamClient.prototype.</span>_requestDidReceiveData
+        <span class="apidocSignatureSpan">(aRequest, aData)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_requestDidReceiveData = function (aRequest, aData)
+{
+    var connection = this._connectionForKey(aRequest.hash);
+    if (connection === undefined) return;
+
+    connection[&#x27;data&#x27;] = connection[&#x27;data&#x27;] + aData.toString(&#x27;utf8&#x27;);
+
+    var index = -1;
+    while ((index = connection[&#x27;data&#x27;].indexOf(Constants.StreamApiObjectTerminator)) !== -1)
+    {
+        var jsonString = connection[&#x27;data&#x27;].slice(0, index);
+        connection[&#x27;data&#x27;] = connection[&#x27;data&#x27;].slice(index + Constants.StreamApiObjectTerminator.length);
+
+        // If jsonString has a length of zero continue without emitting any
+        // events.
+        if (jsonString.length === 0) continue;
+
+        var object = undefined;
+        try
+        {
+            object = JSON.parse(jsonString);
+        }
+        catch (e)
+        {
+            // If an error occurs while parsing the JSON string reset object
+            // and emit the error
+            object = undefined;
+            this.emit(&#x27;error&#x27;, e);
+        }
+
+        // If object is undefined continue without emitting any events.
+        if (object === undefined) continue;
+
+        if (object.delete !== undefined)
+        {
+            this.emit(&#x27;deleteTweet&#x27;, object.delete);
+        }
+        else if (object.scrub_geo !== undefined)
+        {
+            this.emit(&#x27;deleteLocation&#x27;, object.scrub_geo);
+        }
+        else if (object.limit !== undefined)
+        {
+            this.emit(&#x27;limit&#x27;, object.limit);
+        }
+        else if (object.retweeted_status !== undefined)
+        {
+            this.emit(&#x27;retweet&#x27;, object.retweeted_status);
+        }
+        else
+        {
+            this.emit(&#x27;tweet&#x27;, object);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.StreamClient.prototype.isRunning" id="apidoc.element.node-twitter.StreamClient.prototype.isRunning">
+        function <span class="apidocSignatureSpan">node-twitter.StreamClient.prototype.</span>isRunning
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isRunning = function ()
+{
+    var self = this;
+    return Object.keys(self._connections).length &#x3e;= 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.StreamClient.prototype.start" id="apidoc.element.node-twitter.StreamClient.prototype.start">
+        function <span class="apidocSignatureSpan">node-twitter.StreamClient.prototype.</span>start
+        <span class="apidocSignatureSpan">(keywords, locations, users, count, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (keywords, locations, users, count, callback)
+{
+    if (this.isRunning() === true)
+    {
+        throw new Error(&#x27;StreamClient is currently running.&#x27;);
+    }
+
+    var parameters = {};
+
+    if (keywords !== undefined &#x26;&#x26; keywords !== null)
+    {
+        if (keywords instanceof Array)
+        {
+            parameters[&#x27;track&#x27;] = keywords.join(&#x27;,&#x27;);
+        }
+        else
+        {
+            throw new Error(&#x27;Expected Array object.&#x27;);
+        }
+    }
+
+    if (locations !== undefined &#x26;&#x26; locations !== null)
+    {
+        if (locations instanceof Array)
+        {
+            parameters[&#x27;locations&#x27;] = locations.join(&#x27;,&#x27;);
+        }
+        else
+        {
+            throw new Error(&#x27;Expected Array object.&#x27;);
+        }
+    }
+
+    if (users !== undefined &#x26;&#x26; users !== null)
+    {
+        if (users instanceof Array)
+        {
+            parameters[&#x27;follow&#x27;] = users.join(&#x27;,&#x27;);
+        }
+        else
+        {
+            throw new Error(&#x27;Expected Array object.&#x27;);
+        }
+    }
+
+    if (count !== undefined &#x26;&#x26; count !== null)
+    {
+        if (isNaN(count) === false)
+        {
+            parameters[&#x27;count&#x27;] = count;
+        }
+        else
+        {
+            throw new Error(&#x27;Expected integer.&#x27;);
+        }
+    }
+
+    // if no parameter is given, connect to the sample stream (aka. &#x22;spritzer&#x22;)
+    if (!keywords &#x26;&#x26; !locations &#x26;&#x26; !users &#x26;&#x26; !count) {
+      this._createGetRequest(&#x27;statuses/sample&#x27;, &#x27;json&#x27;, parameters);
+    // else connect to the filter stream
+    } else {
+      this._createPostRequest(&#x27;statuses/filter&#x27;, &#x27;json&#x27;, parameters);
+    }
+    if(callback &#x26;&#x26; typeof callback === &#x27;function&#x27;)
+    {
+        callback(null, &#x22;tweet&#x22;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+twitterStreamClient.on(&#x27;error&#x27;, function(error) {
+    console.log(&#x27;Error: &#x27; + (error.code ? error.code + &#x27; &#x27; + error.message : error.message));
+});
+twitterStreamClient.on(&#x27;tweet&#x27;, function(tweet) {
+    console.log(tweet);
+});
+
+twitterStreamClient.<span class="apidocCodeKeywordSpan">start</span>([&#x27;baseball&#x27;, &#x27;basketball&#x27;, &#x27;football
+&#x27;, &#x27;hockey&#x27;]);
+```
+
+## Upload
+
+Tweets with attached image media (JPG, PNG or GIF) can be posted using the upload API endpoint.
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.StreamClient.prototype.stop" id="apidoc.element.node-twitter.StreamClient.prototype.stop">
+        function <span class="apidocSignatureSpan">node-twitter.StreamClient.prototype.</span>stop
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (callback)
+{
+    var self = this;
+
+    for (var key in this._connections)
+    {
+        var connection = this._connectionForKey(key);
+        if (connection === undefined)
+        {
+            delete self._connections[key];
+        }
+
+        connection.httpRequest.req.abort();
+    }
+    if(callback &#x26;&#x26; typeof callback === &#x27;function&#x27;)
+    {
+        // wait before calling back to make sure aborts finish
+        var waitUntilStopped = function(){
+            if(self.isRunning())
+            {
+                setTimeout(waitUntilStopped, 100);
+            }
+            else
+            {
+                callback(null, &#x22;tweet&#x22;);
+            }
+        };
+        waitUntilStopped();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-twitter.UploadClient" id="apidoc.module.node-twitter.UploadClient">module node-twitter.UploadClient</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.UploadClient.UploadClient" id="apidoc.element.node-twitter.UploadClient.UploadClient">
+        function <span class="apidocSignatureSpan">node-twitter.</span>UploadClient
+        <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">UploadClient = function (consumerKey, consumerSecret, token, tokenSecret)
+{
+    Client.call(this, consumerKey, consumerSecret, token, tokenSecret);
+
+    this._apiBaseUrlString = Constants.UploadApiBaseURLString;
+    this._apiVersion = Constants.UploadApiVersion;
+    this._validator = new RestParameterValidator();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.UploadClient.super_" id="apidoc.element.node-twitter.UploadClient.super_">
+        function <span class="apidocSignatureSpan">node-twitter.UploadClient.</span>super_
+        <span class="apidocSignatureSpan">(consumerKey, consumerSecret, token, tokenSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_ = function (consumerKey, consumerSecret, token, tokenSecret)
+{
+    Events.EventEmitter.call(this);
+
+<span class="apidocCodeCommentSpan">    /** @private */
+</span>    this._apiBaseUrlString = null;
+    /** @private */
+    this._apiVersion = null;
+    /** @private */
+    this._oauth = {
+        consumer_key: consumerKey,
+        consumer_secret: consumerSecret,
+        token: token,
+        token_secret: tokenSecret
+    };
+    /** @private */
+    this._connections = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-twitter.UploadClient.prototype" id="apidoc.module.node-twitter.UploadClient.prototype">module node-twitter.UploadClient.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.UploadClient.prototype._createPostRequest" id="apidoc.element.node-twitter.UploadClient.prototype._createPostRequest">
+        function <span class="apidocSignatureSpan">node-twitter.UploadClient.prototype.</span>_createPostRequest
+        <span class="apidocSignatureSpan">(resource, format, parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createPostRequest = function (resource, format, parameters, callback)
+{
+	var MEDIA_KEY = &#x27;media[]&#x27;;
+
+	// Multipart data for non-media parameters
+    var multipartItems = Object.keys(parameters).filter(function (key) {
+		return key != MEDIA_KEY;
+	}).map(function (key) {
+		return {
+			&#x27;content-disposition&#x27;: &#x27;form-data; name=&#x22;&#x27; + key + &#x27;&#x22;&#x27;,
+			&#x27;content-type&#x27;: &#x27;text/plain&#x27;,
+			&#x27;body&#x27;: parameters[key]
+		};
+	});
+
+	// Multipart data for media[]
+    var mediaFilePath = path.normalize(parameters[MEDIA_KEY]);
+    var mediaFileExtensionName = path.extname(mediaFilePath);
+    var mimeType = this._mimeTypeForPathExtension(mediaFileExtensionName);
+    if (mimeType === null)
+    {
+        throw new Error(&#x27;Unsupported media type.&#x27;);
+    }
+	var multipartItem = {
+		&#x27;content-disposition&#x27;: &#x27;form-data; name=&#x22;&#x27; + MEDIA_KEY + &#x27;&#x22;&#x27;,
+		&#x27;content-type&#x27;: mimeType,
+		&#x27;content-transfer-encoding&#x27;: &#x27;utf8&#x27;,
+		&#x27;body&#x27;: null
+	};
+	multipartItems.push(multipartItem);
+
+	// Prepare request options
+    var requestUrlString = this._apiBaseUrlString + &#x27;/&#x27; + this._apiVersion +
+		&#x27;/&#x27; + resource + &#x27;.&#x27; + format;
+    var requestOptions = {
+        headers: { &#x27;content-type&#x27;: &#x27;multipart/form-data&#x27; },
+        method: &#x27;POST&#x27;,
+        url: requestUrlString,
+        oauth: this.oauth(),
+        multipart: multipartItems
+    };
+
+	// Asynchronously read the media file and post the request
+    var self = this;
+	fs.readFile(mediaFilePath, function (err, data) {
+		if (err) {
+			throw err;
+		} else {
+			multipartItem.body = data;
+		}
+
+		var httpRequest = request.post(requestOptions);
+		httpRequest.hash = Crypto.createHash(&#x27;sha1&#x27;).update(
+			JSON.stringify(httpRequest.headers), &#x27;utf8&#x27;
+		).digest(&#x27;hex&#x27;);
+		self._connections[httpRequest.hash] = {
+			callback: callback, data: &#x27;&#x27;, httpRequest: httpRequest
+		};
+
+		self._createEventListenersForRequest(httpRequest);
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   this._validator.validateLatitude(parameters);
+   this._validator.validateLongitude(parameters);
+   this._validator.validateMedia(parameters);
+   this._validator.validateStatus(parameters);
+
+   var resource = &#x27;statuses/update_with_media&#x27;;
+
+   this.<span class="apidocCodeKeywordSpan">_createPostRequest</span>(resource, &#x27;json&#x27;, parameters, callback);
+};
+
+/**
+* Creates an HTTP POST request.
+*
+* @private
+* @this {Client}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.UploadClient.prototype._mimeTypeForPathExtension" id="apidoc.element.node-twitter.UploadClient.prototype._mimeTypeForPathExtension">
+        function <span class="apidocSignatureSpan">node-twitter.UploadClient.prototype.</span>_mimeTypeForPathExtension
+        <span class="apidocSignatureSpan">(pathExtension)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_mimeTypeForPathExtension = function (pathExtension)
+{
+    var mimeType = null;
+
+    switch(pathExtension.toLowerCase())
+    {
+        case &#x27;.gif&#x27;:
+            mimeType = &#x27;image/gif&#x27;;
+            break;
+        case &#x27;.jpeg&#x27;:
+        case &#x27;.jpg&#x27;:
+            mimeType = &#x27;image/jpeg&#x27;;
+            break;
+        case &#x27;.png&#x27;:
+            mimeType = &#x27;image/png&#x27;;
+            break;
+    }
+
+    return mimeType;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			&#x27;body&#x27;: parameters[key]
+		};
+	});
+
+	// Multipart data for media[]
+    var mediaFilePath = path.normalize(parameters[MEDIA_KEY]);
+    var mediaFileExtensionName = path.extname(mediaFilePath);
+    var mimeType = this.<span class="apidocCodeKeywordSpan">_mimeTypeForPathExtension</span>(mediaFileExtensionName);
+    if (mimeType === null)
+    {
+        throw new Error(&#x27;Unsupported media type.&#x27;);
+    }
+	var multipartItem = {
+		&#x27;content-disposition&#x27;: &#x27;form-data; name=&#x22;&#x27; + MEDIA_KEY + &#x27;&#x22;&#x27;,
+		&#x27;content-type&#x27;: mimeType,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-twitter.UploadClient.prototype.statusesUpdateWithMedia" id="apidoc.element.node-twitter.UploadClient.prototype.statusesUpdateWithMedia">
+        function <span class="apidocSignatureSpan">node-twitter.UploadClient.prototype.</span>statusesUpdateWithMedia
+        <span class="apidocSignatureSpan">(parameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statusesUpdateWithMedia = function (parameters, callback)
+{
+    var status = parameters[&#x27;status&#x27;];
+    if (status === undefined)
+    {
+        throw new Error(&#x27;Missing required parameter: status.&#x27;);
+    }
+
+    var media = parameters[&#x27;media[]&#x27;];
+    if (media === undefined)
+    {
+        throw new Error(&#x27;Missing required parameter: media[].&#x27;);
+    }
+
+    this._validator.validateDisplayCoordinates(parameters);
+    this._validator.validateInReplyToStatusId(parameters);
+    this._validator.validatePlaceId(parameters);
+    this._validator.validatePossiblySensitive(parameters);
+    this._validator.validateLatitude(parameters);
+    this._validator.validateLongitude(parameters);
+    this._validator.validateMedia(parameters);
+    this._validator.validateStatus(parameters);
+
+    var resource = &#x27;statuses/update_with_media&#x27;;
+
+    this._createPostRequest(resource, &#x27;json&#x27;, parameters, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var twitterRestClient = new Twitter.RestClient(
+&#x27;CONSUMER_KEY&#x27;,
+&#x27;CONSUMER_SECRET&#x27;,
+&#x27;TOKEN&#x27;,
+&#x27;TOKEN_SECRET&#x27;
+);
+
+twitterRestClient.<span class="apidocCodeKeywordSpan">statusesUpdateWithMedia</span>(
+{
+    &#x27;status&#x27;: &#x27;Posting a tweet w/ attached media.&#x27;,
+    &#x27;media[]&#x27;: &#x27;/some/absolute/file/path.jpg&#x27;
+},
+function(error, result) {
+    if (error)
+    {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
